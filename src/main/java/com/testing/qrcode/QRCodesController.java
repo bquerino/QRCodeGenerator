@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/")
-public class QRCodesController {
+public class QRCodeController {
 	
-	@PostMapping(value="/qrcodes", produces= MediaType.IMAGE_PNG_VALUE)
-	public ResponseEntity<BufferedImage> zxingQRCode(@RequestBody String barcode) throws Exception{
+	@PostMapping(value="/qrcode", produces= MediaType.IMAGE_PNG_VALUE)
+	public ResponseEntity<BufferedImage> QRcode(@RequestBody String barcode) throws Exception{
 		return okResponse(QRCodeGenerator.generateQRCodeImage(barcode));
 	}
 	
